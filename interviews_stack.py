@@ -22,8 +22,8 @@ if __name__ == "__main__":
     balanced_samples = ["(((([{}]))))", "[([])((([[[]]])))]{()}", "{{[()]}}"]
     unbalanced_samples = ["}{}", "{{[(])]}}", "[[{())}]"]
 
-    bracket_str = balanced_samples[1]  # insert here the list index you want to check
-    bracket_lst = list(bracket_str)
+    BRACKET_STR = balanced_samples[1]  # insert here the list index you want to check
+    bracket_lst = list(BRACKET_STR)
     stack_inst = Stack(bracket_lst)
 
     if stack_inst.is_empty() is False and stack_inst.size() % 2 == 0:
@@ -37,7 +37,7 @@ if __name__ == "__main__":
         chunk = stack_inst_bool.size() // 2
 
         try:
-            assert result_lst[chunk + 1 :] == result_lst[:chunk][::-1]
+            assert result_lst[chunk + 1:] == result_lst[:chunk][::-1]
             print("The list is balanced")
         except AssertionError:
             print("The list is NOT balanced")
